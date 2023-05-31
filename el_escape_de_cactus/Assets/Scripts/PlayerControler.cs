@@ -6,6 +6,7 @@ public class PlayerControler : MonoBehaviour
 {
     // Start is called before the first frame update
     public float moveSpeed;
+    public float jumpForce;
     public Rigidbody rb;
     void Start()
     {
@@ -15,8 +16,10 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity=new Vector3(Input.GetAxis("Horizontal")*moveSpeed, rb.velocity.y, Input.GetAxis("Vertical")*moveSpeed);
-
+        rb.velocity=new Vector3(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
+        if (Input.GetButtonDown("Jump")){
+            rb.velocity=new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+        }
         //CheckKeys();
     
 
