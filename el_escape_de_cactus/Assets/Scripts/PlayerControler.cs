@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerControler : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float moveSpeed;
-    public float jumpForce;
-    public Rigidbody rb;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float jumpForce;
+    bool isGrounded;
+
+    Rigidbody rb;
     void Start()
     {
         rb=GetComponent<Rigidbody>();
@@ -16,28 +18,19 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity=new Vector3(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y, Input.GetAxis("Vertical") * moveSpeed);
-        if (Input.GetButtonDown("Jump")){
-            rb.velocity=new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
-        }
-        //CheckKeys();
-    
-
+        Move();
+        Jump();
     }
 
-    /*private void CheckKeys(){
-        {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                Debug.Log("Tecla Izquierda presionada.");
-            }
+    void Move(){
+        float moveValue = Input.GetAxis("Horizontal");
+        Debug.Log(moveValue);
+        rb.velocity=new Vector3(moveValue * moveSpeed, rb.velocity.y, 0);
+    }   // Al cambiar de direccion en X el player se debe rotar en la otra direccion
 
-            if (Input.GetKeyUp(KeyCode.LeftArrow))
-            {
-                Debug.Log("Tecla izquierda liberada");
-            }
+    void Jump(){
+        if (Input.GetButtonDown("Jump")){
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
-
-    }*/
-    
+    }   // El salto debe corregirse ya que se puede realizar en el aire indefinidamente. Solo realizar si esta en el SUELO
 }
