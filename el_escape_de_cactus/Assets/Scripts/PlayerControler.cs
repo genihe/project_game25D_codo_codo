@@ -43,8 +43,12 @@ public class PlayerControler : MonoBehaviour
 
     void Jump(){
         if (Input.GetButtonDown("Jump") && isGrounded){
-                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+    }
+
+    void Bounce(float impulse){
+	    rb.AddForce(Vector3.up * impulse, ForceMode.Impulse);
     }
 
     void Turn(){
