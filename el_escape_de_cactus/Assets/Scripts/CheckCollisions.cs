@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CheckCollisions : MonoBehaviour
 {
+    [SerializeField] GameObject box;
+    Rigidbody rb_player;
+
     private void OnTriggerEnter(Collider other){
         Debug.Log("Entrando en " + other.gameObject.name);
     }

@@ -49,6 +49,13 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision){
+        if (collision.gameObject.CompareTag("Hurt"))
+        {
+            Bounce(jumpForce/3);
+        }
+    }
+
     void Bounce(float impulse){
 	    rb.AddForce(Vector3.up * impulse, ForceMode.Impulse);
     }

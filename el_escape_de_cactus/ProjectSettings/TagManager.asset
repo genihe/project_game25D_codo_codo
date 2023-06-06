@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - HurtPoint
+  - Hurt
+  - Hit
   layers:
   - Default
   - TransparentFX
