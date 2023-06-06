@@ -8,7 +8,8 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;            //Podria implementarse que mientras se presiona SHIFT, el estado es correr
-    [SerializeField] float jumpForce;
+    [SerializeField] float jumpForce=5f;
+    //public float jumpTime=1f;
     [SerializeField] float height;
     private bool flipPlayer;
     //RaycastHit hit;
@@ -34,6 +35,7 @@ public class PlayerControler : MonoBehaviour
     void Move(){
         float moveValue = Input.GetAxis("Horizontal");
         //Debug.Log(moveValue);
+
         rb.velocity=new Vector3(moveValue * moveSpeed, rb.velocity.y, 0);
         if (moveValue>0 && !flipPlayer)
             Turn();
@@ -53,9 +55,8 @@ public class PlayerControler : MonoBehaviour
 
     void Turn(){
         flipPlayer=!flipPlayer;
-        Vector3 turn = transform.localScale;
-        turn.x *= -1;
-        transform.localScale=turn;
+        transform.Rotate(new Vector3(0f, 180, 0f));
+        //Debug.Log("Turn");
     }
 
     private void CheckGround(){
@@ -68,6 +69,5 @@ public class PlayerControler : MonoBehaviour
             isGrounded =false;
         }        
     }
-
 }
 
