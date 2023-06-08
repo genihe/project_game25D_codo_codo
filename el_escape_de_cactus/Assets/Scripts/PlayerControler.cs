@@ -20,7 +20,7 @@ public class PlayerControler : MonoBehaviour
     void Start()
     {
         rb=GetComponent<Rigidbody>();
-        flipPlayer=true;
+        flipPlayer=false;
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class PlayerControler : MonoBehaviour
 
     void Move(){
         float moveValue = Input.GetAxis("Horizontal");
-        //Debug.Log(moveValue);
+        Debug.Log("Movimiento horizontal : "+moveValue);
 
         rb.velocity=new Vector3(moveValue * moveSpeed, rb.velocity.y, 0);
         if (moveValue>0 && !flipPlayer)
@@ -67,6 +67,7 @@ public class PlayerControler : MonoBehaviour
     }
 
     private void CheckGround(){
+        Debug.Log("Estoy en: "+transform.position);
         RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down*height);
         Debug.DrawRay(transform.position, Vector3.down * height, Color.blue);
