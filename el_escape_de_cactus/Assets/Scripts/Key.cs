@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Key : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,10 +17,10 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-        if (other.tag=="Attack")
+        
+        if (other.tag=="Player")
         {
-            Debug.Log("Soy el enemigo y fui HERIDO!!!!!!");
+            Debug.Log("Hola Cactus!!!!!!!");
         }
     }
-
 }

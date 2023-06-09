@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Ground
   - Hurt
-  - Hit
+  - Attack
+  - Enemy
+  - Spring
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX
