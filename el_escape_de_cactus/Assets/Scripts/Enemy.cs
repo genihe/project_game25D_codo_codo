@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public PlayerController playerControl;
-    
+    [SerializeField] int enemyPower=1;
     public int enemy_hp = 3;
 
     //[SerializeField] float springForce=0.5f;
@@ -34,6 +34,10 @@ public class Enemy : MonoBehaviour
 
     private void Defeat(){
         Debug.Log("ESTOY DERROTADO");
+    }
+
+    public void DoDamage(){
+        PlayerHealth.instance.GetComponent<IDamageable>().TakeDamage(enemyPower);
     }
 
 }

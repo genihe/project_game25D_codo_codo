@@ -42,14 +42,14 @@ public class DialogManager : MonoBehaviour
                         Time.timeScale=1;
                         isActive=false;
                     }else
-                    {
-                        isActive=true;
+                    {                        
                         CheckName();
                         StopAllCoroutines();
                         StartCoroutine(TypeDialog(dialogLines[currentLine]));
                     }
                 }else
                 {
+                    isActive=true;
                     justStarted=false;
                 }
             }
