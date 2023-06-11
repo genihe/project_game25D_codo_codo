@@ -36,7 +36,7 @@ public class DialogManager : MonoBehaviour
                 if (!justStarted)
                 {
                     currentLine++;
-                    if (currentLine>=dialogLines.Length)
+                    if (currentLine >= dialogLines.Length)
                     {
                         dialogBox.SetActive(false);
                         Time.timeScale=1;

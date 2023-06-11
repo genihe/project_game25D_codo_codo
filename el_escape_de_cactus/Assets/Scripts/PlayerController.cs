@@ -73,14 +73,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Hurt"))
-    //    {
-    //        Bounce(jumpForce/3);
-    //    }
-    //}
-
+    // --------- RECIBO IMPACTO --------- 
     public void Bounce(float impulse){
 	    rb.AddForce(Vector3.up * impulse, ForceMode.Impulse);
     }

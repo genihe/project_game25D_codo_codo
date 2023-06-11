@@ -14,7 +14,7 @@ public class Spring : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
         if (other.tag=="PlayerAttack"){
-            Debug.Log("RESORTE: Salta Player");
+            //Debug.Log("RESORTE: Salta Player");
             playerControl.Bounce(springForce);
         }
     }

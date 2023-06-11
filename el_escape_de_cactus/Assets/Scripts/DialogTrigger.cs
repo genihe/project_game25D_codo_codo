@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DialogTrigger : MonoBehaviour
 {
     [TextArea(3,10)]
+
     public string[] lines;
     private bool canActivate;
     
@@ -26,12 +27,14 @@ public class DialogTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.tag=="Player")
         {
+            Debug.Log("Colision con Player -Trigger- ");
             canActivate=true;
         }
     }
     private void OnTriggerExit(Collider other){
         if (other.tag=="Player")
         {
+            Debug.Log("SALGO de Colision con Player -Trigger- ");
             canActivate=false;
         }
     }

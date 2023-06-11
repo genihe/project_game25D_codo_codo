@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyAttack : MonoBehaviour
 {
     public PlayerController playerControl;
-    //[SerializeField] int enemyPower=1;
-    public int enemy_hp = 3;
+    [SerializeField] int enemyPower=1;
+    //public int enemy_hp = 3;
 
     //[SerializeField] float springForce=0.5f;
     // Start is called before the first frame update
@@ -17,12 +17,13 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update() {}
 
-    /*private void OnTriggerEnter(Collider other){
-        if (other.tag=="PlayerAttack")
+    private void OnTriggerEnter(Collider other){
+        if (other.tag=="PlayerHurt")
         {
             //playerControl.Bounce(springForce);
             //enemy_hp -= 1;
-            Debug.Log("ENEMIGO: Fui pisado");
+            DoDamage();
+            Debug.Log("PLAYER: Fui lastimado");
             //if (enemy_hp == 0)
             //{
             //    Defeat();
@@ -30,14 +31,14 @@ public class Enemy : MonoBehaviour
             //}
             //other.transform.parent.gameObject.SetActive(false);
         }
-    }*/
-
-    private void Defeat(){
-        Debug.Log("ESTOY DERROTADO");
     }
 
-    /*public void DoDamage(){
-        PlayerHealth.instance.GetComponent<IDamageable>().TakeDamage(enemyPower);
+    /*private void Defeat(){
+        Debug.Log("ESTOY DERROTADO");
     }*/
+
+    public void DoDamage(){
+        PlayerHealth.instance.GetComponent<IDamageable>().TakeDamage(enemyPower);
+    }
 
 }
