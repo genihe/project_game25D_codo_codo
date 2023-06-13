@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c291487c3dc7ffe469f2c01b1cc92211
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Cactus Cuties
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e00c3e679ab8bb440b53535ce1e7df14, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
