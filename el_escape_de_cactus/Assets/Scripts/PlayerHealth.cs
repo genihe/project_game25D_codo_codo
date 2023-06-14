@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
@@ -62,8 +63,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void Defeat()
     {
         //currentHealth=maxHealth;
-        Debug.Log("Estoy derrotado  :'-(");
-        //reload the SCENE
+        //Debug.Log("Estoy derrotado  :'-(");
+        //Dirigir a escena de derrota
+        SceneManager.LoadScene(0);
+        //
     }
 }
 
