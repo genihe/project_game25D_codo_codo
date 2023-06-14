@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3f5055fd07ecdc945a4d660d11a40325
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Milky Lemon
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bb9b2008d45ee50408d9128542666a78, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
