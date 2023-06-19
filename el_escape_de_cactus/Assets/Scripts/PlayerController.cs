@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     {
         rb=GetComponent<Rigidbody>();
         flipPlayer=false;
+        transform.rotation = Quaternion.Euler(0,120,0);
+
     }
 
     // Update is called once per frame
@@ -79,8 +81,15 @@ public class PlayerController : MonoBehaviour
     }
 
     void Turn(){
+        if(flipPlayer){
+            transform.rotation = Quaternion.Euler(0,-120,0);
+        }else{
+            transform.rotation = Quaternion.Euler(0,120,0);
+        }
         flipPlayer=!flipPlayer;
-        transform.Rotate(new Vector3(0f, 180, 0f));
+        //transform.Rotate(new Vector3(0f, -120, 0f));
+        
+
         //Debug.Log("Turn");
     }
 
