@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: escritorio
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad87b42f8c1979a49aaa947e66346f1a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad87b42f8c1979a49aaa947e66346f1a, type: 3}
 --- !u!1 &67323571
@@ -946,6 +950,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2e96712fb53aeb44798b07a121711568, type: 3}
       propertyPath: m_Name
       value: ventanal
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e96712fb53aeb44798b07a121711568, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e96712fb53aeb44798b07a121711568, type: 3}
@@ -1818,13 +1826,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.02467767, y: -0.70667607, z: 0.02467767, w: 0.70667607}
-  m_LocalPosition: {x: -0.379, y: 1.458, z: 0.639}
+  m_LocalRotation: {x: 0.03489949, y: 0, z: 0, w: 0.99939084}
+  m_LocalPosition: {x: -1.18, y: 1.335, z: 0.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 4, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 4, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2896,6 +2904,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 112e909fbaa16be469006f34dbf9f284, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 112e909fbaa16be469006f34dbf9f284, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 112e909fbaa16be469006f34dbf9f284, type: 3}
@@ -4196,7 +4208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2902625344757829568, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0059999228
+      value: -0.246
       objectReference: {fileID: 0}
     - target: {fileID: 2902625344757829568, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4485,7 +4497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5518855798229950085, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.178
+      value: -1.18
       objectReference: {fileID: 0}
     - target: {fileID: 5518855798229950085, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
       propertyPath: m_LocalPosition.y
