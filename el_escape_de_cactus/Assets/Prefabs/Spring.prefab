@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerControl: {fileID: 0}
-  springForce: 1
+  springForce: 0.4
 --- !u!54 &3343163224545119189
 Rigidbody:
   m_ObjectHideFlags: 0

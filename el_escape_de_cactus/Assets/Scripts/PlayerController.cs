@@ -10,26 +10,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public int playerPower=1;
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;            //Podria implementarse que mientras se presiona SHIFT, el estado es correr
-    [SerializeField] float jumpForce=0.5f;
+    //[SerializeField] float jumpForce=0.5f;    //usado en salto 1
 
     //Sin uso de gravedad
-    [SerializeField] float globalGravity=-2; 
-    [SerializeField] float gravityScale=1f;
+    //[SerializeField] float globalGravity=-2;  //usado en salto 1
+    //[SerializeField] float gravityScale=1f;   //usado en salto 1
+    //[SerializeField] float freeFallDead=1f;   //usado en salto 1
 
     //public float jumpTime=1f;
     //Rebote al pisar
-    [SerializeField] float height;
+    //[SerializeField] float height;
     private bool flipPlayer;
     //RaycastHit hit;
     //public bool isGrounded;
-    public LayerMask groundLayerMask;
-    Vector3 gravity;
+    //public LayerMask groundLayerMask;
+    //Vector3 gravity;                          //usado el salto 1
     Rigidbody rb;
 
     void Start()
     {
         //Requerido para salto sin fisicas
-        gravity = globalGravity * gravityScale * Vector3.up;
+        //gravity = globalGravity * gravityScale * Vector3.up;
         rb=GetComponent<Rigidbody>();
         flipPlayer=false;
         transform.rotation = Quaternion.Euler(0,120,0);
@@ -39,17 +40,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate ()
     {        
-        rb.AddForce(gravity * jumpForce, ForceMode.Acceleration);
+        //rb.AddForce(gravity * jumpForce, ForceMode.Acceleration);
         Move(); //El player solo posee desplazamiento lateral, IZQ o DER
-        Jump();        
+        //Jump();        
     }
 
     //---------FUNCTIONS---------
     //Movimiento
     void Move(){
         float moveValue = Input.GetAxis("Horizontal");
-        //Debug.Log("Movimiento horizontal : "+moveValue);        
-        rb.velocity=new Vector3(moveValue * moveSpeed, rb.velocity.y, 0);
+        //Debug.Log("Movimiento horizontal : "+moveValue);
+        transform.Translate(Vector3.right * moveValue * moveSpeed * Time.deltaTime, Space.World);
+        //rb.velocity=new Vector3(moveValue * moveSpeed, rb.velocity.y, 0);
         if (moveValue>0 && !flipPlayer)
             Turn();
         else if (moveValue<0 && flipPlayer)
@@ -57,19 +59,22 @@ public class PlayerController : MonoBehaviour
     }
 
     //Salto
-    void Jump(){
+    /*void Jump(){
         //Vector3 gravity = globalGravity * gravityScale * Vector3.up;
         if (Input.GetButtonDown("Jump"))
         {
             if(IsGrounded()){
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                
             }
         }
-    }
+    }*/
 
     // --------- REBOTE --------- 
     public void Bounce(float impulse){
-	    rb.AddForce(Vector3.up * impulse, ForceMode.Impulse);
+        transform.Translate(new Vector3(0, impulse, 0) * Time.deltaTime);
+	    //rb.AddForce(Vector3.up * impulse);
+        //transform.Translate(Vector3.up * impulse * Time.deltaTime, Space.World);
     }
 
     void Turn(){
@@ -82,7 +87,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Turn");
     }
 
-    bool IsGrounded(){
+    /*bool IsGrounded(){
         //Debug.Log("Estoy en: "+transform.position);
         //RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);
@@ -91,7 +96,7 @@ public class PlayerController : MonoBehaviour
             return true;
         }
         return false;
-    }
+    }*/
 /*
     private void CheckGround(){
         //Debug.Log("Estoy en: "+transform.position);

@@ -18,7 +18,7 @@ public class MovilePlatform : MonoBehaviour
         if(!ordenPlataformas && siguientePlataforma <= 0){
             ordenPlataformas=true;
         }
-        if(Vector3.Distance(transform.position, puntosMovimiento[siguientePlataforma].position) < 0.1f){
+        if(Vector3.Distance(transform.position, puntosMovimiento[siguientePlataforma].position) < 0.001f){
             if (ordenPlataformas){
                 siguientePlataforma+=1;
             } else {

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4584215940166750280}
   - component: {fileID: 6684756941689339280}
   - component: {fileID: 4584215940166750285}
+  - component: {fileID: 220476546282438522}
+  - component: {fileID: 3607507500001937666}
   m_Layer: 0
   m_Name: WalkingEnemy
   m_TagString: Untagged
@@ -49,7 +51,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &4584215940166750285
 MonoBehaviour:
@@ -64,8 +66,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerControl: {fileID: 0}
-  enemy_hp: 3
-  springForce: 0
+  springForce: 0.2
+--- !u!65 &220476546282438522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4584215940166750281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 0.007995006}
+  m_Center: {x: 0, y: -6.6686573e-18, z: 0.003436984}
+--- !u!114 &3607507500001937666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4584215940166750281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33411bed3e6989c4ba46b071b275ab27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 5
 --- !u!1 &5841909915594813469
 GameObject:
   m_ObjectHideFlags: 0
