@@ -20,15 +20,9 @@ public class EnemyAttack : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.tag=="PlayerHurt")
         {
-            //playerControl.Bounce(springForce);
-            //enemy_hp -= 1;
+            //playerControl.HurtBounce(hurtForce);
             DoDamage();
             Debug.Log("PLAYER: Fui lastimado");
-            //if (enemy_hp == 0)
-            //{
-            //    Defeat();
-                //Debug.Log("ESTOY DERROTADO");
-            //}
             //other.transform.parent.gameObject.SetActive(false);
         }
     }
@@ -38,7 +32,7 @@ public class EnemyAttack : MonoBehaviour
     }*/
 
     public void DoDamage(){
-        PlayerHealth.instance.GetComponent<IDamageable>().TakeDamage(enemyPower);
+        playerControl.GetComponent<IDamageable>().TakeDamage(enemyPower);
     }
 
 }

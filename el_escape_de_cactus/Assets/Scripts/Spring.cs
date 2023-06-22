@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spring : MonoBehaviour
 {
     public PlayerController playerControl;
-    [SerializeField] float springForce=2.0f;
+    [SerializeField] private float springForce;
     // Start is called before the first frame update
     void Start(){}
 

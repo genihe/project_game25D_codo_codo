@@ -4,26 +4,14 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-
+    [SerializeField]
+    private Rigidbody cactusRB;
     
     private void OnTriggerEnter(Collider other){
-        if (other.tag=="Enemy")
+        if (other.tag=="EnemyHurt")
         {
-           //Defeat();
-           print("Pise al enemigo");
-           
+            //cactusRB.velocity=new Vector3(cactusRB.velocity.x, 0f ,0f);
+            //cactusRB.AddForce(Vector3.up * 50f);
         }
-
-        if (other.tag=="Enemy")
-        {
-           //Defeat();
-           print("Pise al enemigo");
-           
-        }
-
     }
-
-    /*void Defeat(){
-         Debug.Log("Enemy is HURT");
-    }*/
 }
