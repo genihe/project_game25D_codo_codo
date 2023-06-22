@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
         {
             //playerControl.HurtBounce(hurtForce);
             DoDamage();
-            Debug.Log("PLAYER: Fui lastimado");
+            Debug.Log("TOMA ESA CACTUS");
             //other.transform.parent.gameObject.SetActive(false);
         }
     }
@@ -31,6 +31,7 @@ public class EnemyAttack : MonoBehaviour
         Debug.Log("ESTOY DERROTADO");
     }*/
 
+    //Causo Daño a Player
     public void DoDamage(){
         playerControl.GetComponent<IDamageable>().TakeDamage(enemyPower);
     }

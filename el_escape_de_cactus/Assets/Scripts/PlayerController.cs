@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
 //    [SerializeField] int playerHP=3;
     [SerializeField] float moveSpeed;
+    [SerializeField] public int playerPower=1;
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;            //Podria implementarse que mientras se presiona SHIFT, el estado es correr
     [SerializeField] float jumpForce=0.5f;
@@ -14,7 +15,6 @@ public class PlayerController : MonoBehaviour
     //Sin uso de gravedad
     [SerializeField] float globalGravity=-2; 
     [SerializeField] float gravityScale=1f;
-
 
     //public float jumpTime=1f;
     //Rebote al pisar
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        //Requerido para salto sin fisicas
         gravity = globalGravity * gravityScale * Vector3.up;
         rb=GetComponent<Rigidbody>();
         flipPlayer=false;
@@ -37,16 +38,14 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate ()
-    {
-        //Requerido para salto sin fisicas
-        //gravity = globalGravity * gravityScale * Vector3.up;
+    {        
         rb.AddForce(gravity * jumpForce, ForceMode.Acceleration);
-
         Move(); //El player solo posee desplazamiento lateral, IZQ o DER
-        Jump();
-        
+        Jump();        
     }
 
+    //---------FUNCTIONS---------
+    //Movimiento
     void Move(){
         float moveValue = Input.GetAxis("Horizontal");
         //Debug.Log("Movimiento horizontal : "+moveValue);        
@@ -80,9 +79,6 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0,120,0);
         }
         flipPlayer=!flipPlayer;
-        //transform.Rotate(new Vector3(0f, -120, 0f));
-        
-
         //Debug.Log("Turn");
     }
 
@@ -96,9 +92,6 @@ public class PlayerController : MonoBehaviour
         }
         return false;
     }
-
-
-
 /*
     private void CheckGround(){
         //Debug.Log("Estoy en: "+transform.position);

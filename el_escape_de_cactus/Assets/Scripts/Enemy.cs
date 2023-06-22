@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public PlayerController playerControl;
     //[SerializeField] int enemyPower=1;
-    public int enemy_hp = 3;
+    //public int enemy_hp = 3;
 
     [SerializeField] private float springForce;
     // Start is called before the first frame update
@@ -17,15 +17,17 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update() {}
 
-    private void OnTriggerEnter(Collider other){
+    /*private void OnTriggerEnter(Collider other){
         if (other.tag=="PlayerAttack")
         {
             playerControl.Bounce(springForce);
 
             enemy_hp -= 1;
             Debug.Log("ENEMIGO VIDA : " + enemy_hp);
+            //DoDamage();
             if (enemy_hp <= 0)
             {
+                
                 Defeat();
                 //Debug.Log("ESTOY DERROTADO");
             //}
@@ -38,7 +40,7 @@ public class Enemy : MonoBehaviour
         Debug.Log("ESTOY DERROTADO");
         //this.SetActive(false);
         Destroy(gameObject);
-    }
+    }*/
 
     /*public void DoDamage(){
         PlayerHealth.instance.GetComponent<IDamageable>().TakeDamage(enemyPower);
