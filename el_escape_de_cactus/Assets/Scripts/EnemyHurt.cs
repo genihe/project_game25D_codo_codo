@@ -6,9 +6,10 @@ public class EnemyHurt : MonoBehaviour
 {
     [SerializeField] private EnemyHealth enemyHealth;
     [SerializeField] private PlayerController playerControl;
+    //[SerializeField] private PlayerJump playerJump;
     //[SerializeField] private int playerPower;
 
-    [SerializeField] private float springForce;
+    [SerializeField] private float springForce=10;
     // Start is called before the first frame update
     void Start() {}
 
@@ -18,9 +19,10 @@ public class EnemyHurt : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.tag=="PlayerAttack")
         {
+            //playerJump.Jump();
             playerControl.Bounce(springForce);
             
-            Debug.Log("ENEMIGO GOLPEADO : " + enemyHealth.currentHealth);
+            //Debug.Log("ENEMIGO GOLPEADO : " + enemyHealth.currentHealth);
 
             DoDamage();            
             /*/if (enemy_hp <= 0)

@@ -3,23 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
-/*{
-    [SerializeField] float jumpHeight = 5;
-    [SerializeField] float gravityScale= 5;
-    
+//Salto usando RigidBody
+{
+    public GroundCheck3D groundCheck;
+    public float jumpForce=2f;
+    public float gravity = -1f;
+    public float gravityScale = 0.001f;
+    Rigidbody rb;
     float velocity;
-    
+
+    void Start(){
+         rb= GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
-        velocity += Physics2D.gravity.y * gravityScale * Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            velocity = Mathf.Sqrt(jumpHeight * -2 *(Physics2D.gravity.y * gravityScale));
-        }
-        transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime);
+        velocity += gravity * gravityScale * Time.deltaTime;
+        Jump();
     }
-}*/
-{
+
+    void Jump(){
+        
+        if (groundCheck.isGrounded && velocity < 0)
+        {
+            velocity = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && groundCheck.isGrounded)
+        {
+            velocity = jumpForce;
+        }
+        rb.velocity=new Vector3(rb.velocity.x, velocity, 0);
+        //Debug.Log("Velocidad : "+velocity);
+        //transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime);
+    }
+
+
+}
+
+
+//SALTO usando Transform
+/*{
     public GroundCheck3D groundCheck;
     public float jumpForce=2f;
     public float gravity = -1f;
@@ -39,4 +62,4 @@ public class PlayerJump : MonoBehaviour
         }
         transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime);
     }
-}
+}*/

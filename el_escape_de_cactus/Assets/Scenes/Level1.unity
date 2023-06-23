@@ -481,7 +481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5470383605031557476, guid: b932fc8392531fa41ac1b0a6a984de77, type: 3}
       propertyPath: puntosMovimiento.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5470383605031557476, guid: b932fc8392531fa41ac1b0a6a984de77, type: 3}
       propertyPath: puntosMovimiento.Array.data[2]
@@ -2125,7 +2125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.03489949, y: 0, z: 0, w: 0.99939084}
-  m_LocalPosition: {x: -1.18, y: 1.335, z: 0.63}
+  m_LocalPosition: {x: -0.791, y: 1.8510001, z: 0.633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2836,6 +2836,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8556933, y: 0.06616491, z: 1.4256749}
   m_Center: {x: -0.0017271042, y: 0.7837609, z: -0.001375854}
+--- !u!1 &1267214437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2902625344757829571, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
+  m_PrefabInstance: {fileID: 2902625344012710758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1267214438
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267214437}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.03
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1399080977
 GameObject:
   m_ObjectHideFlags: 0
@@ -4451,6 +4469,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2902625344757829569, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
+      propertyPath: m_Center.y
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 2902625344757829571, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
       propertyPath: m_Name
       value: Spring
@@ -4526,15 +4548,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5518855798229950085, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.18
+      value: -0.791
       objectReference: {fileID: 0}
     - target: {fileID: 5518855798229950085, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.203
+      value: 1.719
       objectReference: {fileID: 0}
     - target: {fileID: 5518855798229950085, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.28
+      value: 1.283
       objectReference: {fileID: 0}
     - target: {fileID: 5518855798229950085, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
       propertyPath: m_LocalRotation.w

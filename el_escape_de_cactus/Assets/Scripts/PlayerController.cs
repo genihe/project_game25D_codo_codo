@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     //public LayerMask groundLayerMask;
     //Vector3 gravity;                          //usado el salto 1
     Rigidbody rb;
+    float velocity;
 
     void Start()
     {
@@ -50,8 +51,8 @@ public class PlayerController : MonoBehaviour
     void Move(){
         float moveValue = Input.GetAxis("Horizontal");
         //Debug.Log("Movimiento horizontal : "+moveValue);
-        transform.Translate(Vector3.right * moveValue * moveSpeed * Time.deltaTime, Space.World);
-        //rb.velocity=new Vector3(moveValue * moveSpeed, rb.velocity.y, 0);
+        //transform.Translate(Vector3.right * moveValue * moveSpeed * Time.deltaTime, Space.World);
+        rb.velocity=new Vector3(moveValue * moveSpeed, rb.velocity.y, 0);
         if (moveValue>0 && !flipPlayer)
             Turn();
         else if (moveValue<0 && flipPlayer)
@@ -72,9 +73,11 @@ public class PlayerController : MonoBehaviour
 
     // --------- REBOTE --------- 
     public void Bounce(float impulse){
-        transform.Translate(new Vector3(0, impulse, 0) * Time.deltaTime);
-	    //rb.AddForce(Vector3.up * impulse);
-        //transform.Translate(Vector3.up * impulse * Time.deltaTime, Space.World);
+        //transform.Translate(new Vector3(0, impulse, 0) * Time.deltaTime);
+        //rb.AddForce(Vector3.up * impulse, ForceMode.Impulse);
+        Debug.Log("BOUNCE!!!!!! ");
+        rb.velocity = new Vector3(rb.velocity.x, impulse, 0);
+
     }
 
     void Turn(){
