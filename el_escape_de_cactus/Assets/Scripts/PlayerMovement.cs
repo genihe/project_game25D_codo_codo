@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float movementSpeed=0.6f;
     [SerializeField]float jumpForce=0.5f;
 
+    public GroundCheck3D groundCheck;
+
     // Start is called before the first frame update
     void Start()
     {

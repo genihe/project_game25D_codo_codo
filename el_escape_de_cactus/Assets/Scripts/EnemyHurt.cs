@@ -9,7 +9,7 @@ public class EnemyHurt : MonoBehaviour
     //[SerializeField] private PlayerJump playerJump;
     //[SerializeField] private int playerPower;
 
-    [SerializeField] private float springForce=10;
+    [SerializeField] private float springForce=0.4f;
     // Start is called before the first frame update
     void Start() {}
 
