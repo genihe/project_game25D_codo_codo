@@ -9,10 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2902625344757829568}
-  - component: {fileID: 2902625344757829569}
   - component: {fileID: 3343163224545119189}
   - component: {fileID: 7465446792929305928}
-  - component: {fileID: 2902625344757829582}
   m_Layer: 0
   m_Name: BurgerToy
   m_TagString: Spring
@@ -32,22 +30,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3435636576377452758}
+  - {fileID: 3937078139972012670}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2902625344757829569
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2902625344757829571}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.08, y: 0.010000005, z: 0.08}
-  m_Center: {x: 0, y: 0.09, z: 0}
 --- !u!54 &3343163224545119189
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -62,7 +48,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!65 &7465446792929305928
 BoxCollider:
@@ -75,22 +61,67 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.08, z: 0.1}
-  m_Center: {x: 0, y: 0.04, z: 0}
---- !u!114 &2902625344757829582
+  m_Size: {x: 0.09, y: 0.05, z: 0.09}
+  m_Center: {x: 0, y: 0.025, z: 0}
+--- !u!1 &3869248723162543930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3937078139972012670}
+  - component: {fileID: 6251060681941668375}
+  - component: {fileID: 3817196869759658895}
+  m_Layer: 0
+  m_Name: SpringArea
+  m_TagString: Spring
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3937078139972012670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3869248723162543930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2902625344757829568}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6251060681941668375
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3869248723162543930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.01, z: 0.08}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3817196869759658895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2902625344757829571}
+  m_GameObject: {fileID: 3869248723162543930}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afaf57236a7243543a01cee797b41b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerControl: {fileID: 0}
-  springForce: 0.4
+  springForce: 0.8
 --- !u!1001 &2893400299402977085
 PrefabInstance:
   m_ObjectHideFlags: 0

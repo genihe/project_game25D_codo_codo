@@ -12,41 +12,32 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float runSpeed;            //Podria implementarse que mientras se presiona SHIFT, el estado es correr
     [SerializeField] float jumpForce=0.5f;    //usado en salto 1
 
-    public float distanceToCheck = 0.2f;
-    public bool isGrounded;
+    //public float distanceToCheck = 0.2f;
+    //public bool isGrounded;
     public RaycastHit hit;
-
-
-    //Sin uso de gravedad
-    //[SerializeField] float globalGravity=-2;  //usado en salto 1
-    //[SerializeField] float gravityScale=1f;   //usado en salto 1
-    //[SerializeField] float freeFallDead=1f;   //usado en salto 1
 
     //public float jumpTime=1f;
     //Rebote al pisar
-    [SerializeField] float height;
-    private bool flipPlayer;
-    //RaycastHit hit;
-    //public bool isGrounded;
+    [SerializeField] float height;              //Distancia al suelo
+    //private bool flipPlayer;
     public LayerMask groundLayerMask;
     //Vector3 gravity;                          //usado el salto 1
     Rigidbody rb;
-    //float velocity;
+
+    float auxDir;                               //1:right   /   0:left
 
     void Start()
     {
         //Requerido para salto sin fisicas
         //gravity = globalGravity * gravityScale * Vector3.up;
         rb=GetComponent<Rigidbody>();
-        flipPlayer=false;
-        //transform.rotation = Quaternion.Euler(0,120,0);
-        
+        transform.rotation = Quaternion.Euler(0,120,0);
+        auxDir=1f;
     }
 
     // Update is called once per frame
     void Update ()
-    {    
-        //IsGrounded();
+    {
         //rb.AddForce(gravity * jumpForce, ForceMode.Acceleration);
         Move(); //El player solo posee desplazamiento lateral, IZQ o DER
         Jump();        
@@ -56,15 +47,17 @@ public class PlayerController : MonoBehaviour
     //Movimiento
     void Move(){
         float moveValue = Input.GetAxis("Horizontal");
-        //Debug.Log("Movimiento horizontal : "+moveValue);
-        //transform.Translate(Vector3.right * moveValue * moveSpeed * Time.deltaTime, Space.World);
+        
         rb.velocity=new Vector3(moveValue * moveSpeed, rb.velocity.y, 0);
-
-        /*if (moveValue>=0 && !flipPlayer)
-            Turn(1);
-        else if (moveValue<0 && flipPlayer)
-            Turn(0);
-        */
+        if (moveValue>0){
+            Turn(moveValue);
+            auxDir=moveValue;
+        }else if (moveValue<0){
+            Turn(moveValue);
+            auxDir=moveValue;
+        }else{
+            Turn(auxDir);
+        }
     }
 
 
@@ -88,25 +81,19 @@ public class PlayerController : MonoBehaviour
     }*/
 
     // --------- REBOTE --------- 
-    public void Bounce(float impulse){
-        //transform.Translate(new Vector3(0, impulse, 0) * Time.deltaTime);
-        //rb.AddForce(Vector3.up * impulse, ForceMode.Impulse);
-        
+    public void Bounce(float impulse){    
         rb.velocity = new Vector3(rb.velocity.x, impulse, 0);
-
     }
 
-    void Turn(int dir){
-        if(flipPlayer){
+    void Turn(float dir){
+        if(dir<0){
+            //Debug.Log("A la Derecha");
             transform.rotation = Quaternion.Euler(0,-120,0);
         }else{
+            //Debug.Log("A la Izquierda");
             transform.rotation = Quaternion.Euler(0,120,0);
         }
-        flipPlayer=!flipPlayer;
     }
-
-
-
 
     bool IsGrounded(){
         //Debug.Log("Estoy en: "+transform.position);
@@ -122,19 +109,6 @@ public class PlayerController : MonoBehaviour
     /*void IsGrounded(){
         Ray ray = new Ray(transform.position, Vector3.down);
         isGrounded = Physics.Raycast(ray, out hit, distanceToCheck);
-    }*/
-
-/*
-    private void CheckGround(){
-        //Debug.Log("Estoy en: "+transform.position);
-        //RaycastHit hit;
-        Ray ray = new Ray(transform.position, Vector3.down);
-        Debug.DrawRay(transform.position, Vector3.down * height*2, Color.blue);
-        if (Physics.Raycast(ray, out hit, height, groundLayerMask)){
-            isGrounded = true;
-        }else{
-            isGrounded =false;
-        }        
     }*/
 }
 
