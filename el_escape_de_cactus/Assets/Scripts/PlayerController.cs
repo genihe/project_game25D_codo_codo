@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     float auxDir;                               //1:right   /   0:left
 
+    //private float maxYVel;
+
     void Start()
     {
         //Requerido para salto sin fisicas
@@ -40,7 +43,8 @@ public class PlayerController : MonoBehaviour
     {
         //rb.AddForce(gravity * jumpForce, ForceMode.Acceleration);
         Move(); //El player solo posee desplazamiento lateral, IZQ o DER
-        Jump();        
+        Jump();
+        //Debug.Log("Velocidad de caida : "+maxYVel);
     }
 
     //---------FUNCTIONS---------
@@ -63,9 +67,15 @@ public class PlayerController : MonoBehaviour
 
     //Salto
     void Jump(){
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
+        if (Input.GetButtonDown("Jump") && IsGrounded()){
             rb.velocity=new Vector3(rb.velocity.x, jumpForce, 0);
+        }
+        if(!IsGrounded()){
+            //maxYVel = rb.velocity.y;
+            //Debug.Log("Velocidad de caida : " + maxYVel);
+            if (rb.velocity.y < -0.85){
+                SceneManager.LoadScene(0);
+            }
         }
     }
 
@@ -96,6 +106,7 @@ public class PlayerController : MonoBehaviour
     }
 
     bool IsGrounded(){
+        //maxYVel=0.0f;
         //Debug.Log("Estoy en: "+transform.position);
         //RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);

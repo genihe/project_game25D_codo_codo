@@ -784,8 +784,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "De Ezcurra, Roberto\r\nFlandua Villalilla, Nicol\xE1s Agust\xEDn\r\nGerling,
-    Fernando Francisco\r\nHeuer, German Nicolas\r\nPandelo, Rodrigo\r\nVega, Elio
+  m_Text: "--De Ezcurra, Roberto\r\nFlandua Villalilla, Nicol\xE1s Agust\xEDn\r\nGerling,
+    Fernando Francisco\r\nHeuer, German Nicolas\r\n--Pandelo, Rodrigo\r\nVega, Elio
     Rodrigo\r"
 --- !u!222 &2115953601
 CanvasRenderer:

@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void Defeat()
     {
-        //currentHealth=maxHealth;
+        currentHealth=maxHealth;
         //Debug.Log("Estoy derrotado  :'-(");
 
 
