@@ -9,8 +9,12 @@ public class EnemyControler : MonoBehaviour
     //public int enemy_hp = 3;
     Rigidbody rbEnemy;
     //[SerializeField] private float springForce;
+    public LayerMask groundLayerMask;
     public float moveVelocity=1.5f;
     public int direction_motion=0;
+    [SerializeField] float height;              //Distancia al suelo
+    [SerializeField] float distance_to_turn;              //Distancia al suelo
+
 
     // Start is called before the first frame update
 
@@ -25,13 +29,42 @@ public class EnemyControler : MonoBehaviour
     }
 
     void Enemy_AI(){
-        if (direction_motion==0){
+        if (direction_motion==1){
             rbEnemy.velocity=new Vector3(moveVelocity, rbEnemy.velocity.y, 0);
-        }else{
+        }else if (direction_motion==-1){
             rbEnemy.velocity=new Vector3(-moveVelocity, rbEnemy.velocity.y, 0);
+        }else{
+            rbEnemy.velocity=new Vector3(0, rbEnemy.velocity.y, 0);
+        }
+        Debug.Log("Check Floor : "+CheckFloor());
+        if (!CheckFloor())
+        {
+            if (direction_motion==1)
+            {
+                direction_motion=-1;
+                transform.rotation = Quaternion.Euler(-90,180,0);
+            }else{
+                direction_motion=1;
+                transform.rotation = Quaternion.Euler(-90,0,0);        
+            }
+            
+            
         }
         
-        
+    }
+
+    bool CheckFloor(){
+
+        //maxYVel=0.0f;
+        //Debug.Log("Estoy en: "+transform.position);
+        //RaycastHit hit;
+        //Ray ray = new Ray(transform.position, Vector3.down);
+        Ray ray = new Ray(transform.position+(transform.right * distance_to_turn)+(Vector3.up*0.01f), Vector3.down);
+        Debug.DrawRay(transform.position+(transform.right * distance_to_turn)+(Vector3.up*0.01f), Vector3.down * height, Color.blue);
+        if (Physics.Raycast(ray, height, groundLayerMask)){
+            return true;
+        }
+        return false;
     }
     /*private void OnTriggerEnter(Collider other){
         if (other.tag=="PlayerAttack")

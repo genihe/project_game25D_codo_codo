@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Estoy en: "+transform.position);
         //RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);
-        Debug.DrawRay(transform.position, Vector3.down * height*2, Color.blue);
+        Debug.DrawRay(transform.position, Vector3.down * height, Color.blue);
         if (Physics.Raycast(ray, height, groundLayerMask)){
             return true;
         }

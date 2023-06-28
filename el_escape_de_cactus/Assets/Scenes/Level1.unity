@@ -3196,11 +3196,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584215940166750280, guid: bade83334f2fb8145bdcb5a060cdecb1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.677
+      value: -0.372
       objectReference: {fileID: 0}
     - target: {fileID: 4584215940166750280, guid: bade83334f2fb8145bdcb5a060cdecb1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7069
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 4584215940166750280, guid: bade83334f2fb8145bdcb5a060cdecb1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3239,6 +3239,10 @@ PrefabInstance:
       value: WalkingEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 4584215940166750285, guid: bade83334f2fb8145bdcb5a060cdecb1, type: 3}
+      propertyPath: height
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584215940166750285, guid: bade83334f2fb8145bdcb5a060cdecb1, type: 3}
       propertyPath: enemy_hp
       value: 2000
       objectReference: {fileID: 0}
@@ -3247,9 +3251,21 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4584215940166750285, guid: bade83334f2fb8145bdcb5a060cdecb1, type: 3}
+      propertyPath: moveVelocity
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584215940166750285, guid: bade83334f2fb8145bdcb5a060cdecb1, type: 3}
       propertyPath: playerControl
       value: 
       objectReference: {fileID: 933259107}
+    - target: {fileID: 4584215940166750285, guid: bade83334f2fb8145bdcb5a060cdecb1, type: 3}
+      propertyPath: distance_to_turn
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584215940166750285, guid: bade83334f2fb8145bdcb5a060cdecb1, type: 3}
+      propertyPath: groundLayerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 5841909915594813469, guid: bade83334f2fb8145bdcb5a060cdecb1, type: 3}
       propertyPath: m_TagString
       value: EnemyHurt
