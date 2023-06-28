@@ -63,12 +63,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void Defeat()
     {
-        currentHealth=maxHealth;
+        //currentHealth=maxHealth;
         //Debug.Log("Estoy derrotado  :'-(");
 
 
         //Dirigir a escena de derrota
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         //
     }
 }
