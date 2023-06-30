@@ -79,6 +79,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerControl: {fileID: 0}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  moveVelocity: 1.5
+  direction_motion: 0
+  height: 0
+  distance_to_turn: 0
 --- !u!114 &3607507500001937666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3134896506852466054}
   - component: {fileID: 6305439090936200348}
+  - component: {fileID: 2491150746665106727}
   m_Layer: 0
   m_Name: HurtArea
   m_TagString: Untagged
@@ -137,6 +145,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04, y: 0.04, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2491150746665106727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841909915594813469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b82f4d5ff956e45b13ab1a138cd9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: {fileID: 3607507500001937666}
+  playerControl: {fileID: 0}
+  springForce: 0.25
 --- !u!1 &6120833798053886953
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649242349759610352}
   - component: {fileID: 6499691948133649276}
+  - component: {fileID: 1081236559095503194}
   m_Layer: 0
   m_Name: AttackArea
   m_TagString: Untagged
@@ -181,6 +205,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.075, y: 0.04548005, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1081236559095503194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6120833798053886953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 794a8a0872276464e90cd25794369058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControl: {fileID: 0}
+  enemyPower: 1
 --- !u!1001 &406951635580377936
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,8 +10,16 @@ public class MovilePlatform : MonoBehaviour
     [SerializeField] private float velocidadMovimientos;
     private int siguientePlataforma = 1;
     private bool ordenPlataformas=true;
+    [SerializeField] private bool enabledPlatform;
 
     private void Update(){
+        if (enabledPlatform)
+        {
+            MotionPlatform();    
+        }
+    }
+
+    private void MotionPlatform(){
         if(ordenPlataformas && siguientePlataforma + 1 >= puntosMovimiento.Length){
             ordenPlataformas=false;
         }
@@ -37,6 +45,10 @@ public class MovilePlatform : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             other.transform.SetParent(null);
         }
+    }
+
+    public void SetEnabled(bool isEnabled){
+        enabledPlatform=isEnabled;
     }
 
 }

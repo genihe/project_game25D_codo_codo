@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;            //Podria implementarse que mientras se presiona SHIFT, el estado es correr
     [SerializeField] float jumpForce=0.5f;    //usado en salto 1
+    [SerializeField] float maxHeightFall=0.7f;    //usado en salto 1
 
     //public float distanceToCheck = 0.2f;
     //public bool isGrounded;
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
         if(!IsGrounded()){
             //maxYVel = rb.velocity.y;
             //Debug.Log("Velocidad de caida : " + maxYVel);
-            if (rb.velocity.y < -0.85){
+            if (rb.velocity.y < -maxHeightFall){
                 SceneManager.LoadScene(0);
             }
         }
