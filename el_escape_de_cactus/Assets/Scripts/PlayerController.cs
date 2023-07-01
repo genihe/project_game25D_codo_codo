@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public RaycastHit hit;
 
     [SerializeField] float height;                                      //Distancia al suelo
-    //private bool flipPlayer;
     public LayerMask groundLayerMask;
     
     Rigidbody rb;
@@ -73,17 +72,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /*void Jump(){
-        //Vector3 gravity = globalGravity * gravityScale * Vector3.up;
-        if (Input.GetButtonDown("Jump"))
-        {
-            if(IsGrounded()){
-                //rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                rb.velocity=new Vector3(rb.velocity.x, jumpForce, 0);
-            }
-        }
-    }*/
-
     // --------- REBOTE --------- 
     public void Bounce(float impulse){    
         rb.velocity = new Vector3(rb.velocity.x, impulse, 0);
@@ -110,10 +98,5 @@ public class PlayerController : MonoBehaviour
         }
         return false;
     }
-
-    /*void IsGrounded(){
-        Ray ray = new Ray(transform.position, Vector3.down);
-        isGrounded = Physics.Raycast(ray, out hit, distanceToCheck);
-    }*/
 }
 
