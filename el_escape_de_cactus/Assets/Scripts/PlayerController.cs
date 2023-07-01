@@ -5,37 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-//    [SerializeField] int playerHP=3;
     [SerializeField] float moveSpeed;
     [SerializeField] public int playerPower=1;
     [SerializeField] float walkSpeed;
-    [SerializeField] float runSpeed;            //Podria implementarse que mientras se presiona SHIFT, el estado es correr
-    [SerializeField] float jumpForce=0.5f;    //usado en salto 1
-    [SerializeField] float maxHeightFall=0.7f;    //usado en salto 1
+    [SerializeField] float runSpeed;                                    //Podria implementarse que mientras se presiona SHIFT, el estado es correr
+    [SerializeField] float jumpForce=0.5f;                              //usado en salto 1
+    [SerializeField] float maxHeightFall=0.7f;                          //usado en salto 1
 
-    //public float distanceToCheck = 0.2f;
-    //public bool isGrounded;
     public RaycastHit hit;
 
-    //public float jumpTime=1f;
-    //Rebote al pisar
-    [SerializeField] float height;              //Distancia al suelo
+    [SerializeField] float height;                                      //Distancia al suelo
     //private bool flipPlayer;
     public LayerMask groundLayerMask;
-    //Vector3 gravity;                          //usado el salto 1
+    
     Rigidbody rb;
+    Animator anim;
 
     float auxDir;                               //1:right   /   0:left
 
-    //private float maxYVel;
-
     void Start()
     {
-        //Requerido para salto sin fisicas
-        //gravity = globalGravity * gravityScale * Vector3.up;
         rb=GetComponent<Rigidbody>();
-        transform.rotation = Quaternion.Euler(0,120,0);
+        anim=GetComponent<Animator>();
+        transform.rotation = Quaternion.Euler(0,120,0);                 //Rotacion inicial del player
         auxDir=1f;
     }
 
@@ -45,6 +37,7 @@ public class PlayerController : MonoBehaviour
         //rb.AddForce(gravity * jumpForce, ForceMode.Acceleration);
         Move(); //El player solo posee desplazamiento lateral, IZQ o DER
         Jump();
+        anim.SetBool("isGround", IsGrounded());
         //Debug.Log("Velocidad de caida : "+maxYVel);
     }
 
@@ -52,7 +45,7 @@ public class PlayerController : MonoBehaviour
     //Movimiento
     void Move(){
         float moveValue = Input.GetAxis("Horizontal");
-        
+        anim.SetFloat("Speed", Mathf.Abs(moveValue));
         rb.velocity=new Vector3(moveValue * moveSpeed, rb.velocity.y, 0);
         if (moveValue>0){
             Turn(moveValue);
