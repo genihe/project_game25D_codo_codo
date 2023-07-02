@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7021840266573283251}
   - component: {fileID: 239364451398505348}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: AlertCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
