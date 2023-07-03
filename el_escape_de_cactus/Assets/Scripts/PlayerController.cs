@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             //maxYVel = rb.velocity.y;
             //Debug.Log("Velocidad de caida : " + maxYVel);
             if (rb.velocity.y < -maxHeightFall){
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             }
         }
     }
