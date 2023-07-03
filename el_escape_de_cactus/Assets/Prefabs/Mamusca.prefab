@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4584215940166750285}
   - component: {fileID: 3607507500001937666}
   m_Layer: 0
-  m_Name: WalkingEnemy
+  m_Name: Mamusca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

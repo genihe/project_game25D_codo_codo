@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // --------- REBOTE --------- 
-    public void Bounce(float impulse){    
+    public void Bounce(float impulse){
         rb.velocity = new Vector3(rb.velocity.x, impulse, 0);
     }
 
