@@ -105,7 +105,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5518855798229950085}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &653509708
 BoxCollider:
@@ -466,6 +466,7 @@ GameObject:
   - component: {fileID: 5518855798229950085}
   - component: {fileID: 5518855798229950084}
   - component: {fileID: 5518855798229950138}
+  - component: {fileID: 6826378079762907096}
   - component: {fileID: 5518855798229950087}
   - component: {fileID: 1391417104}
   - component: {fileID: 5203122029322003823}
@@ -487,9 +488,9 @@ Transform:
   m_LocalPosition: {x: -0.0034, y: 1.4592, z: 0.858}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5518855798849264385}
   - {fileID: 5412292553359474388}
   - {fileID: 653509707}
+  - {fileID: 5518855798849264385}
   - {fileID: 1009574741}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -523,6 +524,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04, y: 0.1, z: 0.04}
   m_Center: {x: 0, y: 0.048, z: 0}
+--- !u!136 &6826378079762907096
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518855798229950137}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.03
+  m_Height: 0.12
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!114 &5518855798229950087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,11 +551,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
+  playerPower: 1
   walkSpeed: 0
   runSpeed: 0
   jumpForce: 0.6
-  globalGravity: -2
-  gravityScale: 1
+  maxHeightFall: 0.7
   height: 0.01
   groundLayerMask:
     serializedVersion: 2
@@ -557,7 +572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd1a06a0968ed14f9f520f0a640f7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1548638505}
+  healthBar: {fileID: 0}
+  healthText: {fileID: 0}
   currentHealth: 0
   maxHealth: 3
 --- !u!95 &5203122029322003823
@@ -589,7 +605,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5518855798849264385}
   - component: {fileID: 5518855798849264386}
-  - component: {fileID: 1790599911}
   m_Layer: 0
   m_Name: StompBox
   m_TagString: PlayerAttack
@@ -609,7 +624,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5518855798229950085}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5518855798849264386
 BoxCollider:
@@ -624,19 +639,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.015, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1790599911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5518855798849264384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3d19655c63638b49b761e8eea7cb333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cactusRB: {fileID: 0}
 --- !u!1001 &5518855797922519359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -646,7 +648,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7b1e21b606b15ee42aa6996f4d18807f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b1e21b606b15ee42aa6996f4d18807f, type: 3}
       propertyPath: m_LocalPosition.x
