@@ -68,7 +68,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
 
         //Dirigir a escena de derrota
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
         //
     }
 }

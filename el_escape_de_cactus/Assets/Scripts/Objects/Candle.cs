@@ -7,29 +7,24 @@ public class Candle : MonoBehaviour
 {
     // Start is called before the first frame update
     public PlayerController playerControl;
-    //[SerializeField] int escene=0;
+    [SerializeField] int escene=0;
 
-    void Start()
-    {
-        
-    }
+    void Start(){}
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
 
     private void OnTriggerEnter(Collider other){
         if (other.tag=="Player")
         {
-            //playerControl.Bounce(enemyPower/8);
             LevelChange();
-            //Debug.Log("TOMA ESA CACTUS");
+            //Debug.Log("Cambio de Nivel");
         }
     }
-    //Causo Daño a Player
+
     public void LevelChange(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(escene);
     }
 }

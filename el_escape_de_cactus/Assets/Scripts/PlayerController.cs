@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce=0.5f;                              //usado en salto 1
     [SerializeField] float maxHeightFall=0.7f;                          //usado en salto 1
 
+    [SerializeField] bool isSuper=false;
+
     public RaycastHit hit;
 
     [SerializeField] float height;                                      //Distancia al suelo
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
         Jump();
         anim.SetBool("isGround", IsGrounded());
         //Debug.Log("Velocidad de caida : "+maxYVel);
+        SuperJump();                                                    //Tester configuration
     }
 
     //---------FUNCTIONS---------
@@ -98,5 +101,16 @@ public class PlayerController : MonoBehaviour
         }
         return false;
     }
+
+
+    void SuperJump(){
+        if(Input.GetKeyDown(KeyCode.G) && !isSuper){
+            jumpForce=0.8f;
+            maxHeightFall=5f; 
+        }
+    }
+
+
+
 }
 
