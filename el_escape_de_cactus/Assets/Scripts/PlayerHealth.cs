@@ -90,3 +90,5 @@ public interface IDamageable
 {
     void TakeDamage(int amount);
 }
+
+//https://www.youtube.com/watch?v=mkd96InZKFM&t=807s
