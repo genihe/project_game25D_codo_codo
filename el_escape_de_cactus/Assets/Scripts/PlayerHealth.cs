@@ -18,10 +18,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     int maxHealth = 3;
     Animator animator;
     public AudioSource audioSource;
+    private SoundManager soundManager;
 
     private void Awake()
     {
         instance = this;
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     void Start()
@@ -62,7 +64,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         
         animator.SetBool("isHurt", true);
         Invoke("ResetHurt", 1.5f);
-        audioSource.Play();
+        soundManager.PlayByIndex(0, 0.5f);//Reproduce el sonido [0] de la lista de sonidos del SoundManager
+        //audioSource.Play();
         
         if (currentHealth <= 0)
         {

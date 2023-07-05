@@ -8,6 +8,8 @@ public class EnemyControler : MonoBehaviour
     //[SerializeField] int enemyPower=1;
     //public int enemy_hp = 3;
     Rigidbody rbEnemy;
+    public AudioSource audioSource;
+
     //[SerializeField] private float springForce;
     public LayerMask groundLayerMask;
     public float moveVelocity=1.5f;
@@ -18,6 +20,9 @@ public class EnemyControler : MonoBehaviour
 
     // Start is called before the first frame update
 
+    private void Awake()
+    {
+    }
 
     void Start() {
         rbEnemy=GetComponent<Rigidbody>();
