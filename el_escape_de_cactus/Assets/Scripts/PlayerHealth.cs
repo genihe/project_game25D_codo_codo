@@ -16,6 +16,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     [SerializeField]
     int maxHealth = 3;
+    Animator animator;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -26,6 +28,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         //Asigno la vida maxima a la vida de inicio
         currentHealth = maxHealth;
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -55,6 +59,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         currentHealth=Mathf.Max(currentHealth - amount, 0.0f);
         //currentHealth = currentHealth - amount >= 0 ? currentHealth - amount : 0;
+        
+        animator.SetBool("isHurt", true);
+        Invoke("ResetHurt", 1.5f);
+        audioSource.Play();
+        
         if (currentHealth <= 0)
         {
             Defeat();
@@ -70,6 +79,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         //Dirigir a escena de derrota
         SceneManager.LoadScene(0);
         //
+    }
+    
+    private void ResetHurt(){
+        animator.SetBool("isHurt", false);
     }
 }
 
