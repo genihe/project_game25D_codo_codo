@@ -16,6 +16,7 @@ TagManager:
   - Sign
   - NextLevel
   - AddLife
+  - CameraBoos
   layers:
   - Default
   - TransparentFX
