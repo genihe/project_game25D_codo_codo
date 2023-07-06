@@ -20,7 +20,7 @@ public class DamagePlayer : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-        if (other.tag=="Player")
+        if (other.tag=="PlayerHurt")
         {
             //playerControl.Bounce(enemyPower/8);
             DoDamage();

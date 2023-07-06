@@ -19,11 +19,11 @@ public class MainMenu : MonoBehaviour
     }*/
 
     public void StartGame(){
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("HowToPlay");
     }
 
     public void Credits(){
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Credits");
     }
 
     public void QuitGame(){

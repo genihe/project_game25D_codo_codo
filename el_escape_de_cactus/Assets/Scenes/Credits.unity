@@ -353,8 +353,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -163.82, y: 15.200001}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -87.076904, y: 15.200001}
+  m_SizeDelta: {x: 313.4862, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1035395941
 MonoBehaviour:
@@ -389,7 +389,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Grupo Rojo
+  m_Text: Grupo Rojo (Unity Codo a Codo)
 --- !u!222 &1035395942
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -784,9 +784,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "--De Ezcurra, Roberto\r\nFlandua Villalilla, Nicol\xE1s Agust\xEDn\r\nGerling,
-    Fernando Francisco\r\nHeuer, German Nicolas\r\n--Pandelo, Rodrigo\r\nVega, Elio
-    Rodrigo\r"
+  m_Text: "- De Ezcurra, Roberto\r\n- Gerling, Fernando Francisco\r\n- Heuer, German
+    Nicolas\r\n- Pandelo, Rodrigo\r\n- Vega, Elio Rodrigo\r"
 --- !u!222 &2115953601
 CanvasRenderer:
   m_ObjectHideFlags: 0
