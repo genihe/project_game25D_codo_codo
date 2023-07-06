@@ -11,10 +11,15 @@ public class LifeTear : MonoBehaviour
     {
         instance = this;
     }*/
+    private SoundManager soundManager;
     
     // Start is called before the first frame update
     void Start(){}
 
+    private void Awake()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
     // Update is called once per frame
     void Update(){}
 
@@ -27,6 +32,7 @@ public class LifeTear : MonoBehaviour
 
             //Debug.Log("RECARGO VIDA");
             PlayerHealth.instance.Heal(healthToGive);
+            soundManager.PlayByIndex(3, 0.5f);//Reproduce el sonido [0] de la lista de sonidos del SoundManager
             Destroy(gameObject);
         }
     }
