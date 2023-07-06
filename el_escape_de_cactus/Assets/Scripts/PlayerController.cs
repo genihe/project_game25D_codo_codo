@@ -12,7 +12,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce=0.5f;                              //usado en salto 1
     [SerializeField] float maxHeightFall=0.7f;                          //usado en salto 1
 
-    [SerializeField] bool isSuper=false;
+    [SerializeField] bool isSuper=false;                                //Usado para hacer pruebas
+
+    [SerializeField] bool isHurt=false;
+    [SerializeField] float invinsibilityTime=1f;
+
 
     public RaycastHit hit;
 
@@ -39,6 +43,10 @@ public class PlayerController : MonoBehaviour
         Move(); //El player solo posee desplazamiento lateral, IZQ o DER
         Jump();
         anim.SetBool("isGround", IsGrounded());
+        if (isHurt){
+            InvinsibleTime();            
+        }
+
         //Debug.Log("Velocidad de caida : "+maxYVel);
         SuperJump();                                                    //Tester configuration
     }
@@ -63,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     //Salto
     void Jump(){
-        if (Input.GetButtonDown("Jump") && IsGrounded()){
+        if (Input.GetButtonDown("Jump") && IsGrounded() && !isHurt){
             rb.velocity=new Vector3(rb.velocity.x, jumpForce, 0);
         }
         if(!IsGrounded()){
@@ -74,6 +82,23 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    //Invulnerable luego de ser lastimado
+    public void IsHurt(){
+        Debug.Log("Estoy herido");
+        isHurt=true;
+    }
+    void InvinsibleTime(){
+        if (invinsibilityTime > 0)
+        {
+            invinsibilityTime -= Time.deltaTime;
+            Debug.Log("Invencible por : " + invinsibilityTime);
+        }else{
+            isHurt=false;
+            invinsibilityTime=1f;
+        }
+    }
+
 
     // --------- REBOTE --------- 
     public void Bounce(float impulse){

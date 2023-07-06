@@ -9,7 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 41fa5aeeb5d54f84d90d876c4807fbd6
   - enabled: 1
-    path: Assets/Scenes/Level0.unity
+    path: Assets/Scenes/HowToPlay.unity
+    guid: f47973abbe34c9943b3d6c07230d6aca
+  - enabled: 0
+    path: Assets/Scenes/deletema_Level0.unity
     guid: 5effc0ab304e0a448bce01e8cd58c9ea
   - enabled: 1
     path: Assets/Scenes/Level1.unity

@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 {
     // Start is called before the first frame update
     public static PlayerHealth instance;
+    public PlayerController playerControl;
 
     public Image healthBar;
     public Text healthText;
@@ -59,6 +60,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
+        playerControl.IsHurt();
         currentHealth=Mathf.Max(currentHealth - amount, 0.0f);
         //currentHealth = currentHealth - amount >= 0 ? currentHealth - amount : 0;
         
@@ -70,6 +72,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (currentHealth <= 0)
         {
             Defeat();
+            // Añadir animacion de derrotado y luego pasar al Defeat
         }
     }
 
@@ -80,7 +83,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
 
         //Dirigir a escena de derrota
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
         //
     }
     

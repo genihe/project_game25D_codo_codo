@@ -16,7 +16,7 @@ public class EnemyAttack : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.tag=="PlayerHurt")
         {
-            //playerControl.HurtBounce(hurtForce);
+            //playerControl.IsHurt();
             DoDamage();
             Debug.Log("TOMA ESA CACTUS");
             //other.transform.parent.gameObject.SetActive(false);
