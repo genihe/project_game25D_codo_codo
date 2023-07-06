@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public Image healthBar;
     public Text healthText;
+
     //public int currentHealth;
     public float currentHealth;
 
@@ -38,7 +39,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount=GetPercentage();
+        healthBar.fillAmount = GetPercentage();
 
         //Actualizo el Text en pantalla al valor de la vida
         healthText.text = GetLife().ToString();
@@ -50,28 +51,31 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     }
 
     //Problemas al incorporar el paquete 2D Sprite (postergar desarrollo)
-    public float GetPercentage(){
+    public float GetPercentage()
+    {
         return currentHealth / maxHealth;
     }
 
-    public void Heal (float amount){
-        currentHealth=Mathf.Min(currentHealth + amount, maxHealth);
+    public void Heal(float amount)
+    {
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
 
     public void TakeDamage(int amount)
     {
         playerControl.IsHurt();
-        currentHealth=Mathf.Max(currentHealth - amount, 0.0f);
+        currentHealth = Mathf.Max(currentHealth - amount, 0.0f);
         //currentHealth = currentHealth - amount >= 0 ? currentHealth - amount : 0;
-        
+
         animator.SetBool("isHurt", true);
-        Invoke("ResetHurt", 1.5f);
-        soundManager.PlayByIndex(0, 0.5f);//Reproduce el sonido [0] de la lista de sonidos del SoundManager
+        soundManager.PlayByIndex(0, 0.5f); //Reproduce el sonido [0] de la lista de sonidos del SoundManager
         //audioSource.Play();
-        
+
+        Invoke("ResetHurt", 1.5f);
         if (currentHealth <= 0)
         {
-            Defeat();
+            animator.SetBool("isDead", true);
+            Invoke("Defeat", 2.5f);
             // Añadir animacion de derrotado y luego pasar al Defeat
         }
     }
@@ -83,12 +87,14 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
 
         SceneManager.LoadScene("GameOver");
+        animator.SetBool("isDead", false);
         //Dirigir a escena de derrota
         //SceneManager.LoadScene("MainMenu");
         //
     }
-    
-    private void ResetHurt(){
+
+    private void ResetHurt()
+    {
         animator.SetBool("isHurt", false);
     }
 }
