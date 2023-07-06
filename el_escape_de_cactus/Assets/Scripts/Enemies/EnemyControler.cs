@@ -26,14 +26,17 @@ public class EnemyControler : MonoBehaviour
 
     void Start() {
         rbEnemy=GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
     void Update() {
-        Enemy_AI();
+        //Enemy_AI();
+        MotionEnemy();
+
     }
 
-    void Enemy_AI(){
+    /*void Enemy_AI(){
         if (direction_motion==1){
             rbEnemy.velocity=new Vector3(moveVelocity, rbEnemy.velocity.y, 0);
         }else if (direction_motion==-1){
@@ -51,15 +54,53 @@ public class EnemyControler : MonoBehaviour
             }else{
                 direction_motion=1;
                 transform.rotation = Quaternion.Euler(-90,0,0);        
-            }
-            
-            
+            }           
         }
-        
+        //CheckDirection();
+    }*/
+
+    void MotionEnemy(){
+        if (direction_motion==1){
+            rbEnemy.velocity=new Vector3(moveVelocity, rbEnemy.velocity.y, 0);
+        }else if (direction_motion==-1){
+            rbEnemy.velocity=new Vector3(-moveVelocity, rbEnemy.velocity.y, 0);
+        }else{
+            rbEnemy.velocity=new Vector3(0, rbEnemy.velocity.y, 0);
+        }
+        CheckOnPlatForm();
+    }
+    
+    //Cambio la direccion del movimiento al salirse de la plataforma para que no caida de la escena
+    void CheckOnPlatForm(){                     
+        if (!CheckFloor()){
+            direction_motion*=-1;
+            DirectionMotion();
+        }
+    }
+    
+
+    void OnCollisionEnter(Collision collision)
+    {
+        direction_motion*=-1;
+        DirectionMotion();
+        Debug.Log(collision.collider.name);
+    }
+    
+    void DirectionMotion(){
+        if (direction_motion==1){
+            //direction_motion=-1;
+            transform.rotation = Quaternion.Euler(-90,0,0);  
+        }else{
+            //direction_motion=1;
+            transform.rotation = Quaternion.Euler(-90,180,0);
+        }    
     }
 
-    bool CheckFloor(){
 
+
+
+
+    bool CheckFloor(){
         //maxYVel=0.0f;
         //Debug.Log("Estoy en: "+transform.position);
         //RaycastHit hit;
