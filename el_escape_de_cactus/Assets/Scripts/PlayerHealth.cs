@@ -82,8 +82,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         //Debug.Log("Estoy derrotado  :'-(");
 
 
+        SceneManager.LoadScene("GameOver");
         //Dirigir a escena de derrota
-        SceneManager.LoadScene("MainMenu");
+        //SceneManager.LoadScene("MainMenu");
         //
     }
     
