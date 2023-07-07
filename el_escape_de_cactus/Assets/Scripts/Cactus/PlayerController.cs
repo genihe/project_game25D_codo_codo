@@ -135,6 +135,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetPowerUp(float amount){
+        jumpForce+=amount;
+    }
 
 
 }

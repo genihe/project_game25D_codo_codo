@@ -7,7 +7,7 @@ public class Candle : MonoBehaviour
 {
     // Start is called before the first frame update
     public PlayerController playerControl;
-    [SerializeField] int escene=0;
+    //[SerializeField] int escene=0;
 
     void Start(){}
 
@@ -25,6 +25,6 @@ public class Candle : MonoBehaviour
     }
 
     public void LevelChange(){
-        SceneManager.LoadScene(escene);
+        SceneManager.LoadScene("Level2");
     }
 }
