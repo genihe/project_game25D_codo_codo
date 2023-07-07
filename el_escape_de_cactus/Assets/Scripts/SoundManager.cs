@@ -19,7 +19,9 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update() { }
 
-    public void PlayByIndex(int index, float volume){
+    public void PlayByIndex(int index, float volume, float time = 0){
+        controlAudio.time = time;
+        Debug.Log("time por : " + time);
         controlAudio.PlayOneShot (audios [index], volume);
     }
     public void PlayInLoopByIndex(int index, float volume){
