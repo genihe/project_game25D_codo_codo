@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
         if (invinsibilityTime > 0)
         {
             invinsibilityTime -= Time.deltaTime;
-            Debug.Log("Invencible por : " + invinsibilityTime);
+            //Debug.Log("Invencible por : " + invinsibilityTime);
         }
         else
         {

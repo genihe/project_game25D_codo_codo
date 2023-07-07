@@ -255,6 +255,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bcfc4352d90f9c04bacb14310a06b920, type: 3}
   - {fileID: 8300000, guid: 96d6ffac4ee3fed47b1b25d5d8371ed4, type: 3}
   - {fileID: 8300000, guid: 5177bbe1b32bc6140bc2c1820ffa75d2, type: 3}
+  - {fileID: 8300000, guid: 6fce6f836725da049b746848fcd3ccd8, type: 3}
+  - {fileID: 8300000, guid: 3729204c7bd574a4db265464fdb03eb8, type: 3}
 --- !u!4 &34446332
 Transform:
   m_ObjectHideFlags: 0
@@ -4045,7 +4047,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.03489949, y: 0, z: 0, w: 0.99939084}
-  m_LocalPosition: {x: -0.7, y: 1.94, z: 0.27}
+  m_LocalPosition: {x: -0.3, y: 1.94, z: 0.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5180,7 +5182,7 @@ GameObject:
   - component: {fileID: 1253561041}
   m_Layer: 0
   m_Name: Danger_MeltGum
-  m_TagString: Untagged
+  m_TagString: BubbleGum
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5322,7 +5324,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1399080981
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5335,10 +5337,12 @@ Animator:
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1413456811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7639,6 +7643,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BubbleGum_02
       objectReference: {fileID: 0}
+    - target: {fileID: 1172061068185999019, guid: f7457dce9d969494fbc9ce81088a023a, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172061068185999019, guid: f7457dce9d969494fbc9ce81088a023a, type: 3}
+      propertyPath: m_TagString
+      value: BubbleGum
+      objectReference: {fileID: 0}
     - target: {fileID: 1172061068185999022, guid: f7457dce9d969494fbc9ce81088a023a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7681,6 +7693,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1172061068185999022, guid: f7457dce9d969494fbc9ce81088a023a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074579853634002625, guid: f7457dce9d969494fbc9ce81088a023a, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8654,6 +8670,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BubbleGum_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1172061068185999019, guid: f7457dce9d969494fbc9ce81088a023a, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172061068185999019, guid: f7457dce9d969494fbc9ce81088a023a, type: 3}
+      propertyPath: m_TagString
+      value: BubbleGum
+      objectReference: {fileID: 0}
     - target: {fileID: 1172061068185999022, guid: f7457dce9d969494fbc9ce81088a023a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8696,6 +8720,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1172061068185999022, guid: f7457dce9d969494fbc9ce81088a023a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074579853634002625, guid: f7457dce9d969494fbc9ce81088a023a, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9213,7 +9241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5518855798229950085, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5518855798229950085, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
       propertyPath: m_LocalPosition.y

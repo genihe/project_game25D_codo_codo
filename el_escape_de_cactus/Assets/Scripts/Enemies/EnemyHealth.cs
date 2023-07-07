@@ -42,13 +42,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (currentHealth <= 0)
         {
             Defeat();
-            soundManager.Stop();
         }
         soundManager.PlayByIndex(1, 0.5f);
     }
 
     public void Defeat()
     {
+        soundManager.PlayByIndex(6, 0.5f);
         Destroy(gameObject);
     }
 }

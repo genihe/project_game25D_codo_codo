@@ -17,6 +17,7 @@ TagManager:
   - NextLevel
   - AddLife
   - CameraBoos
+  - BubbleGum
   layers:
   - Default
   - TransparentFX
