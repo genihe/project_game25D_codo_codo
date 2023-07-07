@@ -68,15 +68,17 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         //currentHealth = currentHealth - amount >= 0 ? currentHealth - amount : 0;
 
         animator.SetBool("isHurt", true);
-        soundManager.PlayByIndex(0, 0.5f); //Reproduce el sonido [0] de la lista de sonidos del SoundManager
-        //audioSource.Play();
-
-        Invoke("ResetHurt", 1.5f);
         if (currentHealth <= 0)
         {
             animator.SetBool("isDead", true);
             Invoke("Defeat", 2.5f);
             // Añadir animacion de derrotado y luego pasar al Defeat
+        }
+        else
+        {
+            soundManager.PlayByIndex(0, 0.5f);
+            //audioSource.Play();
+            Invoke("ResetHurt", 1.5f);
         }
     }
 
@@ -87,7 +89,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
 
         SceneManager.LoadScene("GameOver");
-        animator.SetBool("isDead", false);
+        //animator.SetBool("isDead", false);
+
         //Dirigir a escena de derrota
         //SceneManager.LoadScene("MainMenu");
         //
