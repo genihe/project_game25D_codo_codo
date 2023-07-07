@@ -11,6 +11,9 @@ public class BossController : MonoBehaviour
     public float chaseRange=0.5f;
     public float attackRange=0.2f;
     public float speed;
+    public float groggyTime=2f;
+    public int directionMotion=0;
+    public bool isStunned=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +26,9 @@ public class BossController : MonoBehaviour
         //Mover de lado a lado    
         float distance = Vector3.Distance(transform.position, target.position);
 
-        if (currentState=="Idle")
+        if (currentState=="Idle" && !isStunned)
         {
-            if (distance < chaseRange)
+            if (distance < chaseRange) 
                 currentState="Chase";
         }
         else if(currentState=="Chase")
@@ -44,9 +47,27 @@ public class BossController : MonoBehaviour
         else if(currentState=="Attack")
         {
             if (distance > attackRange)
-                currentState="Chase";
+                isStunned=true;
+                GroggyTime();
+                //currentState="Chase";
         }
     }
+
+    void GroggyTime(){
+        if (isStunned)
+        {
+            if (groggyTime>0)
+            {
+                groggyTime-=Time.deltaTime;
+            }else{
+                isStunned=false;
+                currentState="Idle";
+                groggyTime=2f;
+            }
+        }
+       
+    }
+
 }
 
 
