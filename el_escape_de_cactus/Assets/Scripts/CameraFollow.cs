@@ -28,4 +28,10 @@ public class CameraFollow : MonoBehaviour
 			transform.position = Vector3.Lerp(transform.position , new Vector3(-1.05f,0.95f,0.27f), smothing * Time.deltaTime);  
 		}
 	}
+
+	public void CenterCamera(){
+		lookAtPlayer=false;
+	}
+
+
 }

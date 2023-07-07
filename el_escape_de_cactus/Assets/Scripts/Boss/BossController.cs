@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public int hp=10;
-    public int power=1;
+    //public int hp=10;
+    //public int power=1;
     public string currentState="Idle";
     private Transform target;
     public float chaseRange=0.5f;
