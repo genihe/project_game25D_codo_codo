@@ -182,4 +182,10 @@ public class PlayerController : MonoBehaviour
             maxHeightFall = 5f;
         }
     }
+
+    public void SetPowerUp(float amount){
+        jumpForce+=amount;
+    }
+
+
 }
