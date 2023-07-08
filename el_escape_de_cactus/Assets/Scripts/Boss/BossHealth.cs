@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour, IDamageable
+public class BossHealth : MonoBehaviour, IDamageable
 {
     // Start is called before the first frame update
     //public Text healthBar;
-    public static EnemyHealth instance;
+    public static BossController bossClock;
+    public static BossHealth instance;
     private SoundManager soundManager;
     public int currentHealth;
     public bool isDefeat;
 
     [SerializeField]
-    int maxHealth = 3;
+    int maxHealth = 30;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     void Start()
     {
         currentHealth = maxHealth;
+        bossClock=GetComponent<BossController>();
         //soundManager.PlayInLoopByIndex(2,0.1f); //El sonido de deslizamiento
     }
 
@@ -44,12 +46,15 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             Defeat();
         }
+        bossClock.GroggyTime(1,true);
         soundManager.PlayByIndex(1, 0.5f);
     }
 
     public void Defeat()
     {
         soundManager.PlayByIndex(5, 0.5f);
-        Destroy(gameObject,1);
+        bossClock.isDefeat=true;
+        this.enabled=false;
+        //Destroy(gameObject,1);
     }
 }
