@@ -12,9 +12,11 @@ public class DamagePlayer : MonoBehaviour
 
     private SoundManager soundManager;
 
-    void Awake(){
+    void Awake()
+    {
         soundManager = FindObjectOfType<SoundManager>();
     }
+
     void Start() { }
 
     // Update is called once per frame
@@ -22,14 +24,12 @@ public class DamagePlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("tag01: " + other.tag);
-        Debug.Log("tag02: " + gameObject.tag);
-        if (gameObject.tag == "BubbleGum")
-        {
-            soundManager.PlayByIndex(6, 0.5f);
-        }
         if (other.tag == "PlayerHurt")
         {
+            if (gameObject.tag == "BubbleGum")
+            {
+                soundManager.PlayByIndex(6, 0.5f);
+            }
             //playerControl.Bounce(enemyPower/8);
             DoDamage();
             //Debug.Log("TOMA ESA CACTUS");

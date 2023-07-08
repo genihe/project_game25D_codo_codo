@@ -48,7 +48,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public void Defeat()
     {
-        soundManager.PlayByIndex(6, 0.5f);
+        soundManager.PlayByIndex(5, 0.5f);
         Destroy(gameObject);
     }
 }
