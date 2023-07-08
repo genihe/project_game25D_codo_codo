@@ -1195,7 +1195,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414455203}
-  - component: {fileID: 414455204}
   - component: {fileID: 414455205}
   - component: {fileID: 414455206}
   m_Layer: 0
@@ -1213,25 +1212,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414455202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 0.998, z: 1.139}
+  m_LocalPosition: {x: -0.703, y: 0.998, z: 1.139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 428225166}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &414455204
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414455202}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &414455205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1243,8 +1229,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.11255905, y: 0.5, z: 0.5}
-  m_Center: {x: 0.06137447, y: 0, z: 0}
+  m_Size: {x: 0.05, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &414455206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,6 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main_camera: {fileID: 963194225}
+  bossArea: 0
 --- !u!1 &418681293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,7 +1639,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1599375231407021101, guid: d54adfe79a0a86147be968bcca88e87b, type: 3}
   m_PrefabInstance: {fileID: 1599375232186564209}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &577917340
+--- !u!114 &577917342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

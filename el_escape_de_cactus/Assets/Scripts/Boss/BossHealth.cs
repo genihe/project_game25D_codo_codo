@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class BossHealth : MonoBehaviour, IDamageable
 {
@@ -55,6 +57,7 @@ public class BossHealth : MonoBehaviour, IDamageable
         soundManager.PlayByIndex(5, 0.5f);
         bossClock.isDefeat=true;
         this.enabled=false;
+        SceneManager.LoadScene("Credits");
         //Destroy(gameObject,1);
     }
 }
