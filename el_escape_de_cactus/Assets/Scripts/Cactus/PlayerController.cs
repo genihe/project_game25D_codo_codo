@@ -109,14 +109,15 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Velocidad de caida : " + maxYVel);
             if (rb.velocity.y < -maxHeightFall)
             {
-            Debug.Log("Velocidad de caida : " + rb.velocity.y);
-            GameOver();
+                Debug.Log("Velocidad de caida : " + rb.velocity.y);
+                GameOver();
             }
         }
     }
 
-    private void GameOver(){
-         SceneManager.LoadScene("GameOver");
+    private void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 
     //Invulnerable luego de ser lastimado
@@ -167,9 +168,15 @@ public class PlayerController : MonoBehaviour
         //RaycastHit hit;
         Ray ray = new Ray(transform.position, Vector3.down);
         Debug.DrawRay(transform.position, Vector3.down * height, Color.blue);
+
         if (Physics.Raycast(ray, height, groundLayerMask))
         {
             return true;
+        }
+        else if (Physics.Raycast(ray, out hit))
+        {
+            string tag = hit.collider.gameObject.tag;
+            return (tag == "Spring");
         }
         return false;
     }
@@ -183,9 +190,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetPowerUp(float amount){
-        jumpForce+=amount;
+    public void SetPowerUp(float amount)
+    {
+        jumpForce += amount;
     }
-
-
 }

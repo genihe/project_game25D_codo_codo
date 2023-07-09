@@ -821,7 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 204119691}
   m_Layer: 0
-  m_Name: Blocks_1
+  m_Name: CubeBlocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1289,7 +1289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2902625344757829571, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Jumper
       objectReference: {fileID: 0}
     - target: {fileID: 3817196869759658895, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
       propertyPath: springForce
@@ -1832,7 +1832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2902625344757829571, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Jumper
       objectReference: {fileID: 0}
     - target: {fileID: 3817196869759658895, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
       propertyPath: springForce
@@ -3092,7 +3092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2902625344757829571, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Jumper
       objectReference: {fileID: 0}
     - target: {fileID: 3817196869759658895, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
       propertyPath: springForce
@@ -6595,7 +6595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1294791621
 Transform:
   m_ObjectHideFlags: 0
@@ -10041,7 +10041,7 @@ GameObject:
   - component: {fileID: 1934878503}
   m_Layer: 0
   m_Name: Jumpers
-  m_TagString: Untagged
+  m_TagString: Jumper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10851,7 +10851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2902625344757829571, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Jumper
       objectReference: {fileID: 0}
     - target: {fileID: 3817196869759658895, guid: b1b0cbb50b8e4b540876c8d748cd4efe, type: 3}
       propertyPath: springForce

@@ -18,6 +18,7 @@ TagManager:
   - AddLife
   - CameraBoos
   - BubbleGum
+  - Jumper
   layers:
   - Default
   - TransparentFX
