@@ -12,6 +12,7 @@ public class BossController : MonoBehaviour
     public float chaseRange=0.5f;
     public float attackRange=0.2f;
     public float speed;
+    public GameObject hero;
     public float groggyTime=2f;
     float defaultGroggyTime=2f;
     public int directionMotion=0;
@@ -26,8 +27,8 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDefeat==false)
-        {
+       // if (isDefeat==false)
+      //  {
             //Mover de lado a lado    
             float distance = Vector3.Distance(transform.position, target.position);
 
@@ -56,7 +57,7 @@ public class BossController : MonoBehaviour
                     GroggyTime(defaultGroggyTime, isStunned);
                     //currentState="Chase";
             }
-        }
+       // }
 
     }
 

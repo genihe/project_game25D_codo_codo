@@ -176,6 +176,7 @@ public class PlayerController : MonoBehaviour
         else if (Physics.Raycast(ray, out hit))
         {
             string tag = hit.collider.gameObject.tag;
+            //Debug.Log("Falling over Tag: " + tag);
             return (tag == "Spring");
         }
         return false;
@@ -193,5 +194,9 @@ public class PlayerController : MonoBehaviour
     public void SetPowerUp(float amount)
     {
         jumpForce += amount;
+    }
+
+    public void SetTimeSpeed(float speed){
+        Time.timeScale = speed;
     }
 }

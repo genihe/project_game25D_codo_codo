@@ -18,7 +18,7 @@ public class Credits : MonoBehaviour
     {
         if (startTimer)
         {
-            Debug.Log("Tiempo : " + changeSceneTime);
+            //Debug.Log("Tiempo : " + changeSceneTime);
             changeSceneTime-=Time.deltaTime;
             if (changeSceneTime < 0)
             {

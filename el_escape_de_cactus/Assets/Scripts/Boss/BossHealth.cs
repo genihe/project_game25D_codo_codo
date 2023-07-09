@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 
 public class BossHealth : MonoBehaviour, IDamageable
 {
@@ -12,7 +10,6 @@ public class BossHealth : MonoBehaviour, IDamageable
     public static BossHealth instance;
     private SoundManager soundManager;
     public int currentHealth;
-    public bool isDefeat;
 
     [SerializeField]
     int maxHealth = 30;
@@ -26,15 +23,18 @@ public class BossHealth : MonoBehaviour, IDamageable
     void Start()
     {
         currentHealth = maxHealth;
-        bossClock=GetComponent<BossController>();
+        bossClock = GetComponent<BossController>();
         //soundManager.PlayInLoopByIndex(2,0.1f); //El sonido de deslizamiento
     }
 
     // Update is called once per frame
-    /*void Update()
+    void Update()
     {
-        healthBar.text = GetLife().ToString();
-    }*/
+        //healthBar.text = GetLife().ToString();
+        if(bossClock.isDefeat){
+
+        }
+    }
 
     public int GetLife()
     {
@@ -48,16 +48,17 @@ public class BossHealth : MonoBehaviour, IDamageable
         {
             Defeat();
         }
-        bossClock.GroggyTime(1,true);
+        bossClock.GroggyTime(1, true);
         soundManager.PlayByIndex(1, 0.5f);
     }
 
     public void Defeat()
     {
-        //soundManager.PlayByIndex(5, 0.5f);
-        bossClock.isDefeat=true;
-        this.enabled=false;
-        SceneManager.LoadScene("Credits");
-        //Destroy(gameObject,1);
+        Debug.Log("This object " + gameObject.name + " it was defeated");
+        Destroy(gameObject); 
+    }
+
+    void OnDestroy(){
+        soundManager.PlayByIndex(5, 0.5f); 
     }
 }
