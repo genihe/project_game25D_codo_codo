@@ -54,7 +54,7 @@ public class BossHealth : MonoBehaviour, IDamageable
 
     public void Defeat()
     {
-        soundManager.PlayByIndex(5, 0.5f);
+        //soundManager.PlayByIndex(5, 0.5f);
         bossClock.isDefeat=true;
         this.enabled=false;
         SceneManager.LoadScene("Credits");

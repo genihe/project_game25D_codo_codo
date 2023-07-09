@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour
 	private void Start(){
 		lookAtPlayer=true;
 		offset = transform.position - target.position;
-		Debug.Log(offset);
+		//Debug.Log(offset);
 	}
 	private void FixedUpdate()
 	{

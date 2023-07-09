@@ -83,7 +83,7 @@ public class EnemyControler : MonoBehaviour
     {
         direction_motion*=-1;
         DirectionMotion();
-        Debug.Log(collision.collider.name);
+        //Debug.Log("EnemyController - Collider: " + collision.collider.name);
     }
     
     void DirectionMotion(){

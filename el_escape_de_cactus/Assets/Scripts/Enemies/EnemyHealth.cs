@@ -40,6 +40,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public void TakeDamage(int amount)
     {
         currentHealth = currentHealth - amount >= 0 ? currentHealth - amount : 0;
+        Debug.Log("This "+gameObject.name+" take ("+amount+") of damage. Life: "+ currentHealth + "/"+ maxHealth);
         if (currentHealth <= 0)
         {
             Defeat();
@@ -49,7 +50,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public void Defeat()
     {
+        Debug.Log("This object " + gameObject.name + " is defeat");
         soundManager.PlayByIndex(5, 0.5f);
-        Destroy(gameObject,1);
+        Destroy(gameObject);
     }
 }
