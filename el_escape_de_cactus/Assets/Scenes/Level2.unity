@@ -5633,7 +5633,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1599375231499948380, guid: d54adfe79a0a86147be968bcca88e87b, type: 3}
       propertyPath: m_Size.x
-      value: 0.064392805
+      value: 0.08293164
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599375231499948380, guid: d54adfe79a0a86147be968bcca88e87b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.008694053
       objectReference: {fileID: 0}
     - target: {fileID: 1599375231499948380, guid: d54adfe79a0a86147be968bcca88e87b, type: 3}
       propertyPath: m_Size.z
@@ -5641,7 +5645,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1599375231499948380, guid: d54adfe79a0a86147be968bcca88e87b, type: 3}
       propertyPath: m_Center.x
-      value: 0
+      value: -0.002075255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599375231499948380, guid: d54adfe79a0a86147be968bcca88e87b, type: 3}
+      propertyPath: m_Center.y
+      value: -0.008882821
       objectReference: {fileID: 0}
     - target: {fileID: 1599375231499948380, guid: d54adfe79a0a86147be968bcca88e87b, type: 3}
       propertyPath: m_Center.z
@@ -5960,6 +5968,10 @@ PrefabInstance:
       propertyPath: m_CullTransparentMesh
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1009574743, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1009574744, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
       propertyPath: m_RenderMode
       value: 0
@@ -6074,7 +6086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2028318515, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 2028318515, guid: 122deca18e4390642992c14d8e5356e0, type: 3}
       propertyPath: m_AnchoredPosition.y
